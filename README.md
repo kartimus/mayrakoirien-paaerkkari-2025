@@ -1,2 +1,2 @@
 # paaerkkari-2025
-Pääerikoisnäyttelyn nettisivujen projekti
+Mäyräkoirien Pääerikoisnäyttelyn nettisivujen projekti vuodelle 2025.
