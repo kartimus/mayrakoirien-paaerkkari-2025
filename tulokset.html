@@ -26,38 +26,42 @@
                 <a href="yhteystiedot.html">Yhteystiedot</a>
         </nav>
             
-                <section class="sisalto">
-                    <div class="text-content">
-                        <h1>Tulokset</h1>
-                        <p>Tänne infoa tuloksista</p>
-                    </div>
-            
-                    <!-- Kuville varattu alue -->
-                    <div class="image-content">
-                        <img src="./images/placeholder1.jpg" alt="Paikka kuvalle">
-                        <img src="./images/placeholder2.jpg" alt="Paikka kuvalle">
-                    </div>
-                </section>
+        <section class="sisalto">
+            <div class="text-content">
+                <h1>Tulokset</h1>
+                <p>Tänne infoa tuloksista</p>
+            </div>
+    
+            <!-- Kuville varattu alue -->
+            <div class="image-content">
+                <img src="./images/placeholder1.jpg" alt="Paikka kuvalle">
+                <img src="./images/placeholder2.jpg" alt="Paikka kuvalle">
+            </div>
+        </section>
+
+        <section class="media">
+            <h2>Media</h2>
+    
+            <!-- Flexbox placeholderit -->
+            <div class="flex-row">
+                <div class="placeholder">Paikka kuvalle</div>
+                <div class="placeholder">Paikka kuvalle</div>
+                <div class="placeholder">Paikka kuvalle</div>
+            </div>
+    
+        </section>
         
-                <section class="media">
-                    <h2>Media</h2>
-            
-                    <!-- Flexbox placeholderit -->
-                    <div class="flex-row">
-                        <div class="placeholder">Paikka kuvalle</div>
-                        <div class="placeholder">Paikka kuvalle</div>
-                        <div class="placeholder">Paikka kuvalle</div>
-                    </div>
-            
-                </section>
+        <footer>
+    
+        </footer>
+
+        <script>
+            document.querySelectorAll('nav a').forEach(link => {
+                if (link.href === window.location.href) {
+                    link.classList.add('active');
+                }
+            });
+        </script>
         
-        
-                <script>
-                    document.querySelectorAll('nav a').forEach(link => {
-                        if (link.href === window.location.href) {
-                            link.classList.add('active');
-                        }
-                    });
-                </script>
-            </body>
-        </html>
+    </body>
+</html>
