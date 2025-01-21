@@ -2,7 +2,6 @@ body
 {
     background-color: #f9f9f9;
     font-family: "sarabun", sans-serif;
-    color: #401D09;
 }
 
 .overlay
@@ -34,7 +33,7 @@ header .logo
 header h1
 {
   font-family: 'Sarabun', sans-serif;
-  font-size: 36px;
+  font-size: 3em;
   font-weight: 900;
   color: #b7b7d4;
   text-shadow: 
@@ -54,11 +53,20 @@ header h1
     .logo {
         width: 20vw; /* Isompi logo pienemmillä näytöillä suhteessa näkymään */
     }
+    h1
+    {
+      font-size: 1.5em;
+    }
 }
 
 @media (max-width: 480px) {
-    header {
-        height: 150px; /* Vielä pienempi header */
+    h1
+    {
+      font-size: 1.2em;
+    }
+    header 
+    {
+        height: 100px; /* Vielä pienempi header */
     }
 
     .sisalto
@@ -127,77 +135,115 @@ nav a.active /* Korosta valittu sivu */
   text-align: center;
 }
 
-/* Flexbox - Ensimmäinen rivi */
-.media .flex-row 
-{
-  display: flex;
-  justify-content: space-between;
-  gap: 1em;
-  margin-bottom: 2em;
+
+.list {
+  max-width: 400px; /* Rajaa listan leveyttä */
+  margin: 0; /* Keskittää listan sivulla */
 }
 
-.media .flex-row .placeholder 
-{
+.list-item {
+  display: grid; /* Käytetään grid-layoutia */
+  grid-template-columns: auto 1fr auto; /* Kolme saraketta: alku, pisteet, loppu */
+  align-items: end; /* Keskittää pystysuunnassa */
+  gap: 10px; /* Väli sarakkeiden välillä */
+}
+
+.dots {
+  border-bottom: 1.5px dotted #000; /* Pisteviiva */
+  width: 100%; /* Venyy täyttämään välin */
+  height: 1px; /* Määrittää viivan korkeuden */
+}
+
+/* Media-osio */
+.media {
+  padding: 2em;
+  background-color: #f9f9f9;
+}
+
+.media h1 {
+  color: #869386;
+  margin-top: 0;
+  text-align: center;
+}
+
+.media .grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 saraketta */
+  gap: 1em;
+}
+
+@media (max-width: 1200px) {
+  .media .grid-container {
+      grid-template-columns: repeat(2, 1fr); /* 2 saraketta */
+  }
+}
+
+@media (max-width: 800px) {
+  .media .grid-container {
+      grid-template-columns: 1fr; /* 1 sarake */
+  }
+}
+
+.media .grid-container .placeholder {
   background-color: #869386;
-  flex: 1;
   height: 150px;
   border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
 }
 
-/* Grid - Toinen rivi */
-.media .grid-container 
+.sisalto 
 {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 1em;
-}
-
-.media .grid-container .placeholder 
-{
-  background-color: #acbaac;
-  height: 150px;
-  border-radius: 5px;
-}
-
-.sisalto {
-  display: grid;
-  grid-template-columns: 75% 25%; /* 75% tekstille, 25% kuville */
-  gap: 1em;
-  margin: 2em;
+  grid-template-columns: 75% 25%; /* 75% tekstille, 25% kuville */ 
+  gap: 1em; 
+  margin: 2em; 
   background-color: #f9f9f9; /* Vaalea tausta sisällölle */
   padding: 1em;
   border: 1px solid #869386; /* Tehostevärinen reunus */
-  border-radius: 5px;
-}
+  border-radius: 5px; 
+} 
 
-.text-content {
-  background-color: #f1f1f1;
-  padding: 1em;
-  border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.image-content {
-  background-color: #f1f1f1;
-  padding: 1em;
-  border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  display: grid; /* Järjestetään kuvat riveihin */
-  grid-template-columns: 1fr; /* Kaksi kuvaa vierekkäin */
-  gap: 1em; /* Välit kuvien välillä */
-}
-
-.image-content img {
-  width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 5px;
-}
+@media (max-width: 800px)
+{ 
+  .sisalto 
+  { 
+    grid-template-columns: 1fr; /* Yksi sarake, kun leveys on alle 800px */ 
+  } 
+} 
+  .text-content 
+  {
+    background-color: #f1f1f1;
+    padding: 1em;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  } 
+  .image-content 
+  { 
+    background-color: #f1f1f1;
+    padding: 1em;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: grid; /* Järjestetään kuvat riveihin */
+    grid-template-columns: 1fr; /* Kaksi kuvaa vierekkäin */
+    gap: 1em; /* Välit kuvien välillä */
+  } 
+  .image-content img
+  {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 5px;
+  }
 
 /* ----- FOOTER ----- */
 footer
 {
   border-top: 3px solid #401D09;
+  text-align: end;
 }
 
 
