@@ -5,6 +5,7 @@
     <meta charset='UTF-8'/>
     <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
     <title>Mäyräkoirien Pääerikoisnäyttely 2025</title>
+    <link rel="stylesheet" href="style.css"/>
     <link rel='stylesheet' href='sponsorit.css'/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,14 +22,20 @@
         </div>
         
         <nav>
-            
-                <a href="index.html" class="active">Etusivu</a>
-                <a href="tuomarit.html">Tuomarit</a>
-                <a href="ilmoittautuminen.html">Ilmoittautuminen</a>
-                <a href="aikataulu.html">Aikataulu</a>
-                <a href="tulokset.html">Tulokset</a>
-                <a href="yhteystiedot.html">Yhteystiedot</a>
-                <a href="sponsorit.html">Sponsorit</a>
+            <a href="index.html" class="etusivu-linkki">Etusivu</a>
+            <ul class="nav-links">
+                <li><a href="tuomarit.html">Tuomarit</a></li>
+                <li><a href="ilmoittautuminen.html">Ilmoittautuminen</a></li>
+                <li><a href="aikataulu.html">Aikataulu</a></li>
+                <li><a href="tulokset.html">Tulokset</a></li>
+                <li><a href="yhteystiedot.html">Yhteystiedot</a></li>
+                <li><a href="sponsorit.html">Sponsorit</a></li>
+            </ul>
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
         </nav>
 
         
@@ -57,10 +64,11 @@
 
 
         <script>
-            document.querySelectorAll('nav a').forEach(link => {
-                if (link.href === window.location.href) {
-                    link.classList.add('active');
-                }
+            const mobileMenu = document.getElementById('mobile-menu');
+            const navLinks = document.querySelector('.nav-links');
+
+            mobileMenu.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
             });
         </script>
     </body>

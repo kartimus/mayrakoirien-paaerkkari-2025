@@ -21,21 +21,26 @@
         </div>
         
         <nav>
-            
-                <a href="index.html" class="active">Etusivu</a>
-                <a href="tuomarit.html">Tuomarit</a>
-                <a href="ilmoittautuminen.html">Ilmoittautuminen</a>
-                <a href="aikataulu.html">Aikataulu</a>
-                <a href="tulokset.html">Tulokset</a>
-                <a href="yhteystiedot.html">Yhteystiedot</a>
-                <a href="sponsorit.html">Sponsorit</a>
+            <a href="index.html" class="etusivu-linkki">Etusivu</a>
+            <ul class="nav-links">
+                <li><a href="tuomarit.html">Tuomarit</a></li>
+                <li><a href="ilmoittautuminen.html">Ilmoittautuminen</a></li>
+                <li><a href="aikataulu.html">Aikataulu</a></li>
+                <li><a href="tulokset.html">Tulokset</a></li>
+                <li><a href="yhteystiedot.html">Yhteystiedot</a></li>
+                <li><a href="sponsorit.html">Sponsorit</a></li>
+            </ul>
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
         </nav>
-
         <section class="sisalto">
             <div class="text-content">
                 <h1>Tervetuloa näyttelyyn!</h1>
-                <p>Etelä-Pohjanmaan Mäyräkoirakerho ry ja Suomen Mäyräkoiraliitto SML ry järjestävät mäyräkoirien pääerikoisnäyttelyn 02.08.2025.
-                   Näyttelypaikkana toimii Törnävän kenttä osoitteessa Huhtalantie 72 60200 Seinäjoki.</p>
+                <p><strong>Etelä-Pohjanmaan Mäyräkoirakerho ry</strong> ja <strong>Suomen Mäyräkoiraliitto SML ry</strong> järjestävät mäyräkoirien pääerikoisnäyttelyn 02.08.2025.
+                   Näyttelypaikkana toimii Törnävän kenttä osoitteessa <strong>Huhtalantie 72 60200 Seinäjoki</strong>.</p>
             </div>
     
             <!-- Kuville varattu alue -->
@@ -63,10 +68,11 @@
 
 
         <script>
-            document.querySelectorAll('nav a').forEach(link => {
-                if (link.href === window.location.href) {
-                    link.classList.add('active');
-                }
+            const mobileMenu = document.getElementById('mobile-menu');
+            const navLinks = document.querySelector('.nav-links');
+
+            mobileMenu.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
             });
         </script>
     </body>
