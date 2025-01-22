@@ -55,7 +55,7 @@ nav {
   text-decoration: none;
   color: #455845;
   font-weight: bold;
-  font-size: 1.5em;
+  font-size: 1.8em;
   margin-right: auto;
 }
 
@@ -105,7 +105,7 @@ nav {
      
   header h1
   {
-    font-size: 1.5em;
+    font-size: 1.6em;
   }
 
   .nav-links {
@@ -134,7 +134,7 @@ nav {
 {
   header h1
   {
-    font-size: 1em;
+    font-size: 1.3em;
   }
   header 
   {
@@ -144,7 +144,7 @@ nav {
   .sisalto
   {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: 1.2fr;
   }
 
   .image-content

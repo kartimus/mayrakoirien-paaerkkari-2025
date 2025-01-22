@@ -10,55 +10,50 @@
     text-align: center;
 }
 
+/* Grid-asettelu */
 .media .grid-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* 3 saraketta */
     gap: 1em;
+    overflow: hidden; /* Varmistaa, ettei kuva ylivuoda */
 }
 
-@media (max-width: 1200px) {
-    .media .grid-container {
-        grid-template-columns: repeat(2, 1fr); /* 2 saraketta */
-    }
-}
-
-@media (max-width: 800px) {
-    .media .grid-container {
-        grid-template-columns: 1fr; /* 1 sarake */
-    }
-}
-
+/* Placeholderit (tässä kuvat) */
 .media .grid-container .placeholder {
     background-color: #869386;
-    height: 150px;
     border-radius: 5px;
     display: flex;
     align-items: center;
     justify-content: center;
     color: white;
     font-weight: bold;
+    height: 150px; /* Kiinteä korkeus placeholderille */
+    overflow: hidden; /* Varmistaa, ettei kuva ylivuoda */
 }
 
-/* Footer */
-footer {
-    border-top: 3px solid #401D09;
-    text-align: end;
-    padding: 1em;
+/* Kuvan asetukset placeholderin sisällä */
+.media .grid-container .placeholder img {
+    max-width: 100%; /* Kuva ei ylitä placeholderin leveyttä */
+    max-height: 100%; /* Kuva ei ylitä placeholderin korkeutta */
+    object-fit: contain; /* Säilyttää kuvan mittasuhteet */
+    display: block; /* Poistaa inline-kuvien marginaalit */
+}
+
+/* Media queryt pienemmille näytöille */
+
+/* Näyttökoko alle 1200px (2 saraketta) */
+@media (max-width: 1200px) {
+    .media .grid-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 saraketta */
+    }
+}
+
+/* Näyttökoko alle 800px (1 sarake) */
+@media (max-width: 800px) {
+    .media .grid-container {
+        grid-template-columns: 1fr; /* 1 sarake */
+    }
 }
 
 
-/* Fonttityylit */
-.sarabun-thin {
-    font-family: "Sarabun", sans-serif;
-    font-weight: 100;
-}
 
-.sarabun-bold {
-    font-family: "Sarabun", sans-serif;
-    font-weight: 700;
-}
-
-.sarabun-extrabold {
-    font-family: "Sarabun", sans-serif;
-    font-weight: 800;
-}
