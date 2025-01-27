@@ -128,6 +128,16 @@ nav {
   .menu-toggle {
       display: flex;
   }
+
+  .image-content {
+    padding: 3em 1.5em; /* Pienennetään paddingia keskikokoisille näytöille */
+    gap: 1.5em; /* Vähemmän tilaa kuvien välille */
+}
+
+.image-content img {
+    max-width: 85%; /* Rajoitetaan kuvien leveyttä suhteessa grid-alueeseen */
+}
+
 }
 
 @media (max-width: 480px)
@@ -147,11 +157,14 @@ nav {
     grid-template-columns: 1.2fr;
   }
 
-  .image-content
-  {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1em;
-  }
+  .image-content {
+    padding: 2em 1em; /* Pienennetään paddingia pienille näytöille */
+    gap: 1em; /* Supistetaan välejä kuvien välillä */
+}
+
+.image-content img {
+    max-width: 80%; /* Rajoitetaan kuvien leveyttä pienemmillä näytöillä */
+}
 
   .etusivu-linkki {
     font-size: 1em;
@@ -246,13 +259,35 @@ nav {
 {
   display: grid;
   grid-template-columns: 75% 25%; /* 75% tekstille, 25% kuville */ 
-  gap: 1em; 
-  margin: 2em; 
+  gap: 0.75em; 
+  margin: 1.5em;
   background-color: #f9f9f9; /* Vaalea tausta sisällölle */
   padding: 1em;
   border: 1px solid #869386; /* Tehostevärinen reunus */
-  border-radius: 5px; 
+  border-radius: 9px; 
 } 
+
+.image-content {
+  background-color: #f1f1f1;
+  align-items: center;
+  padding: 4em 2em; /* Peruspadding suuremmille näytöille */
+  border-radius: 9px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: grid;
+  grid-template-columns: 1fr; /* Yksi kuva per rivi oletuksena */
+  gap: 2em; /* Tilaa kuvien välillä */
+  max-width: 90vw; /* Grid-alueen maksimi leveys suhteessa näkymään */
+  margin: 0 auto; /* Keskittää grid-alueen näyttöön */
+}
+
+.image-content img {
+  width: 100%; /* Skaalaa kuvat grid-alueeseen */
+  height: auto; /* Säilyttää kuvien mittasuhteet */
+  max-width: 90%; /* Kuvan maksimileveys suhteessa grid-alueeseen */
+  margin: 0 auto; /* Keskittää kuvat vaakasuunnassa */
+  display: block;
+  border-radius: 17px;
+}
 
 @media (max-width: 800px)
 { 
@@ -268,24 +303,7 @@ nav {
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   } 
-  .image-content 
-  { 
-    background-color: #f1f1f1;
-    padding: 1em;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    display: grid; /* Järjestetään kuvat riveihin */
-    grid-template-columns: 1fr; /* Kaksi kuvaa vierekkäin */
-    gap: 1em; /* Välit kuvien välillä */
-  } 
-  .image-content img
-  {
-    width: 100%;
-    height: auto;
-    display: block;
-    border-radius: 5px;
-  }
-
+  
 /* ----- FOOTER ----- */
 footer
 {
