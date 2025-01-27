@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    <html lang='en'></html>
+<head>
+    <meta charset='UTF-8'/>
+    <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+    <title>Pääerikoisnäyttely 2025 - tuomarit</title>
+    <link rel='stylesheet' href='style.css'/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+    
+
+</head>
+    <body>
+        <header>
+            <h1>Mäyräkoirien Pääerikoisnäyttely <br>Seinäjoella 2.8.2025</h1>
+        </header>
+        <nav>
+            <a href="index.html" class="etusivu-linkki">Etusivu</a>
+            <ul class="nav-links">
+                <li><a href="tuomarit.html">Tuomarit</a></li>
+                <li><a href="ilmoittautuminen.html">Ilmoittautuminen</a></li>
+                <li><a href="aikataulu.html">Aikataulu</a></li>
+                <li><a href="tulokset.html">Tulokset</a></li>
+                <li><a href="yhteystiedot.html">Yhteystiedot</a></li>
+                <li><a href="sponsorit.html">Sponsorit</a></li>
+            </ul>
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+
+        <section class="sisalto">
+            <div class="text-content">
+                <h1>Reino Korpela</h1>
+                <p>
+                    Olen iloinen, että sain arvosteluoikeudet mäyräkoiriin vuonna 2021. Rodut olivat minulle ennen sitä kohtuullisen vieraita. 
+                    Mäyräkoiraliitto antoi hyvän opastuksen ja koulutuksen rotuihin. Tutkin aikanaan paljon rodun historiaa ja erityisesti sen käyttötarkoitusta. 
+                    Parin viimeisen vuoden aikana olenkin osallistunut kaverin mäyräkoiran kanssa muutamiin kaurisjahteihin. 
+                    Täytyy sanoa, että tämä karkeakarvainen standardin kokoinen koira on yllättänyt minut positiivisesti metsästyskäytössä.
+                    Onni on ollut arvostella näitä rotuja myös useissa ryhmänäyttelyissä. Itsellä on tunne, että tuntuma rotuihin on jo melko hyvä.</p>
+                <p>
+                    Kiitän kutsusta Mäyräkoiraliiton erikoisnäyttelyyn Seinäjoelle. Näyttelyssä minulla on arvosteltavana ainakin pitkäkarvaiset 
+                    mäyräkoirat ja pitkäkarvaiset kääpiöt. Näyttely on Etelä-Pohjanmaalla ja täällä harrastajakuntaa riittää. 
+                    Uskon kokonaiskoiramäärän nousevan näyttelyssä erittäin suureksi.Tervetuloa rotujen päänäyttelyyn. Nähdään elokuulla 2025.
+                </p>
+                <p>
+                Terveisin, Reino
+                </p>
+                <p style="text-align:center; margin-top: 40px;">
+                    <img src="images/reino-korpela.jpg" alt="reino-korpela" width="80%" />
+                </p>
+            </div>
+    
+            <!-- Kuville varattu alue -->
+            <div class="image-content">
+                <img src="images/EP_mayrakoirakerho_logo_RGB.png" alt="E-p-maykyt-logo">
+                <img src="images/SML_logo_mv_300dpi-1.jpg" alt="SML-logo">
+            </div>
+        </section>
+
+        <section class="media">
+            <h2>Media</h2>
+    
+            <!-- grid-container placeholderit -->
+            <div class="grid-container">
+                <div class="placeholder">Paikka kuvalle</div>
+                <div class="placeholder">Paikka kuvalle</div>
+                <div class="placeholder">Paikka kuvalle</div>
+            </div>
+    
+        </section>
+
+        <footer>
+            <p>&copy; 2025 All rights reserved</p>
+        </footer>
+
+
+        <script>
+            const mobileMenu = document.getElementById('mobile-menu');
+            const navLinks = document.querySelector('.nav-links');
+
+            mobileMenu.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            });
+        </script>
+    </body>
+</html>
