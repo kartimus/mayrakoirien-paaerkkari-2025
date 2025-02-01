@@ -1,21 +1,18 @@
-body
-{
-    background-color: #f9f9f9;
-    font-family: "sarabun", sans-serif;
+body {
+  background-color: #f9f9f9;
+  font-family: "Sarabun", sans-serif;
 }
 
-.overlay
-{
+.overlay {
   background-color: white;
   opacity: 0.5;
 }
 
-header
-{
-  height: 200px;
+header {
+  height: 350px;
   background-image: url('images/Banneri-edited.png');
   background-size: cover;
-  background-position: center;
+  background-position: 80%;
   background-repeat: no-repeat;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -23,8 +20,7 @@ header
   padding: 20px;
 }
 
-header h1
-{
+header h1 {
   grid-column: 2;
   text-align: center;
   font-family: 'Sarabun', sans-serif;
@@ -32,14 +28,13 @@ header h1
   font-weight: 900;
   color: #455845;
   text-shadow: 
-    1px 1px 3px rgba(171, 180, 171, 1),  /* oikea-alakulma */
-    -1px 1px 3px rgba(171, 180, 171, 1), /* vasen-alakulma */
-    1px -1px 3px rgba(171, 180, 171, 1), /* oikea-yläkulma */
-    -1px -1px 3px rgba(171, 180, 171, 1);
+      1px 1px 3px rgba(171, 180, 171, 1),
+      -1px 1px 3px rgba(171, 180, 171, 1),
+      1px -1px 3px rgba(171, 180, 171, 1),
+      -1px -1px 3px rgba(171, 180, 171, 1);
   margin: 0;
 }
 
-/* Navigointipalkki */
 nav {
   padding: 1em;
   background-color: #f9f9f9;
@@ -50,7 +45,6 @@ nav {
   position: relative;
 }
 
-/* Etusivu-linkin tyyli */
 .etusivu-linkki {
   text-decoration: none;
   color: #455845;
@@ -63,7 +57,6 @@ nav {
   color: #401D09;
 }
 
-/* Muut linkit */
 .nav-links {
   display: flex;
   gap: 1em;
@@ -80,7 +73,6 @@ nav {
   color: #401D09;
 }
 
-/* Hampurilaisvalikko */
 .menu-toggle {
   display: none;
   cursor: pointer;
@@ -95,30 +87,123 @@ nav {
   transition: all 0.3s ease;
 }
 
-/* ----- responsiivisuus ----- */
+.image-content {
+  background-color: #f1f1f1;
+  align-items: center;
+  padding: 4em 2em;
+  border-radius: 9px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2em;
+  max-width: 90vw;
+  margin: 0 auto;
+}
 
-@media (max-width: 768px) 
-{
+.image-content img {
+  width: 100%;
+  height: auto;
+  max-width: 90%;
+  margin: 0 auto;
+  display: block;
+  border-radius: 17px;
+}
+
+.sisalto {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 0.75em;
+  margin: 1.5em;
+  background-color: #f9f9f9;
+  padding: 1em;
+  border: 1px solid #869386;
+  border-radius: 9px;
+}
+
+.text-content {
+  background-color: #f1f1f1;
+  padding: 1em;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+  border-top: 3px solid #401D09;
+  text-align: end;
+}
+
+
+.list {
+  display: grid;
+  gap: 8px;
+  padding-right: 2em;
+}
+
+.list-item {
+  display: flex;
+  grid-column: 1;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.dots {
+  flex-grow: 1;
+  position: relative;
+  height: 1px; /* Kapea korkeus pitää layoutin tasapainossa */
+}
+
+.dots::before {
+  content: '';
+  display: block;
+  border-bottom: 1px dotted #333; /* Muuta väriä tarpeen mukaan */
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Kolme vierekkäin oletuksena */
+  gap: 10px;
+  padding: 20px;
+}
+
+.placeholder {
+  
+  background-color: #869386; /* Taustaväri */
+  border: 1px solid #ddd; /* Kehys */
+  border-radius: 7px;
+  padding: 20px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1em;
+  color: #f1f1f1;
+  min-height: 100px; /* Vähimmäiskorkeus */
+}
+
+
+                                                              /* ----- RESPONSIVE DESIGN ----- */
+
+@media (max-width: 768px) {
   header {
-      height: 150px; /* Pienempi header pienemmillä näytöillä */
+      height: 150px;
   }
-     
-  header h1
-  {
-    font-size: 1.6em;
+
+  header h1 {
+      font-size: 1.6em;
   }
 
   .nav-links {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 60px;
-    right: 0;
-    background-color: #f9f9f9;
-    width: 100%;
-    padding: 1em 0;
-    border-top: 2px solid #869386;
-    z-index: 10;
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 60px;
+      right: 0;
+      background-color: #f9f9f9;
+      width: 100%;
+      padding: 1em 0;
+      border-top: 2px solid #869386;
+      z-index: 10;
   }
 
   .nav-links.active {
@@ -130,186 +215,63 @@ nav {
   }
 
   .image-content {
-    padding: 3em 1.5em; /* Pienennetään paddingia keskikokoisille näytöille */
-    gap: 1.5em; /* Vähemmän tilaa kuvien välille */
-}
-
-.image-content img {
-    max-width: 85%; /* Rajoitetaan kuvien leveyttä suhteessa grid-alueeseen */
-}
-
-}
-
-@media (max-width: 480px)
-{
-  header h1
-  {
-    font-size: 1.3em;
-  }
-  header 
-  {
-      height: 100px; /* Vielä pienempi header */
+      padding: 3em 1.5em;
+      gap: 1.5em;
   }
 
-  .sisalto
-  {
+  .image-content img {
+      max-width: 85%;
+  }
+
+  .sisalto {
+      grid-template-columns: 1fr;
+  }
+
+  .media .grid-container {
+      grid-template-columns: 1fr;
+  }
+
+  .list {
     display: grid;
-    grid-template-columns: 1.2fr;
+    gap: 8px;
+    padding-right: 1em;
+  }
+}
+
+
+
+@media (max-width: 480px) {
+  header {
+      height: 100px;
   }
 
-  .image-content {
-    padding: 2em 1em; /* Pienennetään paddingia pienille näytöille */
-    gap: 1em; /* Supistetaan välejä kuvien välillä */
-}
-
-.image-content img {
-    max-width: 80%; /* Rajoitetaan kuvien leveyttä pienemmillä näytöillä */
-}
+  header h1 {
+      font-size: 1.3em;
+  }
 
   .etusivu-linkki {
-    font-size: 1em;
+      font-size: 1em;
   }
 
   .menu-toggle {
-    margin-left: auto;
+      margin-left: auto;
   }
-}
 
-/* ----- MEDIA ----- */
-.media 
-{
-  padding: 2em;
-  background-color: #f9f9f9;
-}
-
-.media h2 
-{
-  color: #869386;
-  margin-top: 0;
-  text-align: center;
-}
-
-
-.list
-{
-  max-width: 400px; /* Rajaa listan leveyttä */
-  margin: 0; /* Keskittää listan sivulla */
-}
-
-.list-item
-{
-  display: grid; /* Käytetään grid-layoutia */
-  grid-template-columns: auto 1fr auto; /* Kolme saraketta: alku, pisteet, loppu */
-  align-items: end; /* Keskittää pystysuunnassa */
-  gap: 10px; /* Väli sarakkeiden välillä */
-}
-
-.dots
-{
-  border-bottom: 1.5px dotted #000; /* Pisteviiva */
-  width: 100%; /* Venyy täyttämään välin */
-  height: 1px; /* Määrittää viivan korkeuden */
-}
-
-/* Media-osio */
-.media
-{
-  padding: 2em;
-  background-color: #f9f9f9;
-}
-
-.media h1
-{
-  color: #869386;
-  margin-top: 0;
-  text-align: center;
-}
-
-.media .grid-container
-{
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 saraketta */
-  gap: 1em;
-}
-
-@media (max-width: 1200px) {
-  .media .grid-container {
-      grid-template-columns: repeat(2, 1fr); /* 2 saraketta */
+  .image-content {
+      padding: 2em 1em;
+      gap: 1em;
   }
-}
 
-@media (max-width: 800px) {
-  .media .grid-container {
-      grid-template-columns: 1fr; /* 1 sarake */
+  .image-content img {
+      max-width: 80%;
   }
-}
 
-.media .grid-container .placeholder {
-  background-color: #869386;
-  height: 150px;
-  border-radius: 5px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  font-weight: bold;
-}
-
-.sisalto 
-{
-  display: grid;
-  grid-template-columns: 75% 25%; /* 75% tekstille, 25% kuville */ 
-  gap: 0.75em; 
-  margin: 1.5em;
-  background-color: #f9f9f9; /* Vaalea tausta sisällölle */
-  padding: 1em;
-  border: 1px solid #869386; /* Tehostevärinen reunus */
-  border-radius: 9px; 
+  .list {
+    display: grid;
+    gap: 8px;
+    padding-right: 0.5;
+  }
 } 
-
-.image-content {
-  background-color: #f1f1f1;
-  align-items: center;
-  padding: 4em 2em; /* Peruspadding suuremmille näytöille */
-  border-radius: 9px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  display: grid;
-  grid-template-columns: 1fr; /* Yksi kuva per rivi oletuksena */
-  gap: 2em; /* Tilaa kuvien välillä */
-  max-width: 90vw; /* Grid-alueen maksimi leveys suhteessa näkymään */
-  margin: 0 auto; /* Keskittää grid-alueen näyttöön */
-}
-
-.image-content img {
-  width: 100%; /* Skaalaa kuvat grid-alueeseen */
-  height: auto; /* Säilyttää kuvien mittasuhteet */
-  max-width: 90%; /* Kuvan maksimileveys suhteessa grid-alueeseen */
-  margin: 0 auto; /* Keskittää kuvat vaakasuunnassa */
-  display: block;
-  border-radius: 17px;
-}
-
-@media (max-width: 800px)
-{ 
-  .sisalto 
-  { 
-    grid-template-columns: 1fr; /* Yksi sarake, kun leveys on alle 800px */ 
-  } 
-} 
-  .text-content 
-  {
-    background-color: #f1f1f1;
-    padding: 1em;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  } 
-  
-/* ----- FOOTER ----- */
-footer
-{
-  border-top: 3px solid #401D09;
-  text-align: end;
-}
 
 
 
